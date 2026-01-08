@@ -1,35 +1,33 @@
 name: CCID_build
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
-  workflow_dispatch:  # 允许手动触发
-  
+    branches: [main, master]
+  workflow_dispatch: # 允许手动触发
+
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Print system info
-      run: |
-        uname -a
-        sw_vers
-        
-    - name: Install dependencies
-      run: |
-        brew update
-        brew install make pkg-config pcsc-lite libusb-1   
-        ./bootstrap
-        
-    - name: configure
-      run: |
-        export BUNDLE_ID=lm
-        ./MacOSX/configure
-        
-    - name: make
-      run: make
+      - uses: actions/checkout@v4
 
+      - name: Print system info
+        run: |
+          uname -a
+          sw_vers
+
+      - name: Install dependencies
+        run: |
+          brew update
+          brew install make pkg-config pcsc-lite libusb
+          ./bootstrap
+
+      - name: configure
+        run: |
+          export BUNDLE_ID=lm
+          ./MacOSX/configure
+
+      - name: make
+        run: make
