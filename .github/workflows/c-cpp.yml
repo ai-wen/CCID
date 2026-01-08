@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           brew update
-          brew install autoconf@2.61 automake m4  libtool make pkg-config pcsc-lite libusb
+          brew install autoconf autoconf-archive automake m4  libtool make pkg-config pcsc-lite libusb
           ./bootstrap
 
       - name: configure
