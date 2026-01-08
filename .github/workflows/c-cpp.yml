@@ -33,4 +33,17 @@ jobs:
           ./MacOSX/configure
 
       - name: make
-        run: make
+        run: |
+              make
+              mkdir -p ifd-ccid-lm.bundle/Contents/MacOS/
+              cp ./src/Info.plist ifd-ccid-lm.bundle/Contents/
+              cp ./src/.libs/libccid.dylib ifd-ccid-lm.bundle/Contents/MacOS/
+              lipo -info ifd-ccid-lm.bundle/Contents/MacOS/libccid.dylib
+              tar -czf ifd-ccid-lm.bundle.tar.gz ifd-ccid-lm.bundle
+              
+      - name: Upload final bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: ifd-ccid-lm.bundle.tar.gz
+          path: ifd-ccid-lm.bundle.tar.gz
+          retention-days: 365
