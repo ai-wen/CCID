@@ -26,6 +26,9 @@ jobs:
 
       - name: configure
         run: |
+          rm -f /opt/homebrew/Cellar/libusb/1.0.29/lib/libusb-1*.dylib
+          rm -f /opt/homebrew/Cellar/libusb/1.0.29/lib/libusb-1.0.a
+          cp libusb-1.0.a /opt/homebrew/Cellar/libusb/1.0.29/lib/
           export BUNDLE_ID=lm
           ./MacOSX/configure
 
