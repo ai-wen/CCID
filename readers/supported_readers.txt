@@ -11,4 +11,3 @@
 
 # Longmai
 0x4C4D:0x8B15:Longmai mTokenCryptoFIPS
-0x4C4D:0x8B15:VNPT Token V11
