@@ -129,7 +129,7 @@ then
 	CONFIGURE_ARGS="$CONFIGURE_ARGS --enable-bundle=ifd-ccid-$BUNDLE_ID.bundle"
 
 	# differentiate each libccid library by the dynamic linker
-	CONFIGURE_ARGS="$CONFIGURE_ARGS	--prefix=/fake/$BUNDLE_ID"
+	#CONFIGURE_ARGS="$CONFIGURE_ARGS	--prefix=/fake/$BUNDLE_ID"
 fi
 
 set -x
