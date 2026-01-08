@@ -23,11 +23,13 @@ jobs:
       run: |
         brew update
         brew install make pkg-config pcsc-lite libusb-1   
+        ./bootstrap
         
     - name: configure
-      run: ./bootstrap
+      run: |
         export BUNDLE_ID=lm
-       ./MacOSX/configure
+        ./MacOSX/configure
+        
     - name: make
       run: make
 
