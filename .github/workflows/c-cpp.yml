@@ -35,7 +35,7 @@ jobs:
       - name: make
         run: |
               make
-              make install
+              sudo make install
               mkdir -p lm/ifd-ccid-lm.bundle/Contents/MacOS/
               cp ./src/Info.plist lm/ifd-ccid-lm.bundle/Contents/
               cp ./src/.libs/libccid.dylib lm/ifd-ccid-lm.bundle/Contents/MacOS/
