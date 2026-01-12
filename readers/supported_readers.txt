@@ -10,4 +10,6 @@
 ##########################
 
 # Longmai
+0x4C4D:0xF703:Longmai mToken CryptoIDE
 0x4C4D:0x8B15:Longmai mTokenCryptoFIPS
+0x4C4D:0xA112:VNPT-CA Token V11
